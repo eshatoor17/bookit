@@ -11,11 +11,9 @@ const app = express();
 app.use(helmet());
 app.use(express.json());
 app.use(express.static('public'));
+
 app.get('/', (req, res) => {
   res.redirect('/index.html');
-});
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 // App runs behind the host's HTTPS proxy
