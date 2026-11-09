@@ -1,6 +1,6 @@
 const express = require('express');
 const pool = require('./db');
-const { requireAdmin } = require('./middleware');
+const { requireAdmin } = require('./auth-middleware');
 
 const router = express.Router();
 router.use(requireAdmin); // every route in this file is admin-only
