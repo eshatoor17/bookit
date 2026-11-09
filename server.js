@@ -11,7 +11,7 @@ app.use(helmet());
 app.use(express.json());
 app.use(express.static('public'));
 
-app.set('trust proxy', 1); // needed on Render/Railway so secure cookies work
+app.set('trust proxy', true); // needed on Render/Railway so secure cookies work
 
 app.use(
   session({
@@ -22,7 +22,7 @@ app.use(
     cookie: {
       httpOnly: true,
       sameSite: 'lax',
-      secure: process.env.NODE_ENV === 'production',
+      secure: false,
       maxAge: 1000 * 60 * 60 * 8, // 8 hours
     },
   })
