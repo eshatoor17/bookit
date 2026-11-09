@@ -22,7 +22,7 @@ app.use(
     cookie: {
       httpOnly: true,
       sameSite: 'lax',
-      secure: false,
+      secure: auto,
       maxAge: 1000 * 60 * 60 * 8, // 8 hours
     },
   })
