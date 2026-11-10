@@ -38,7 +38,7 @@ Node.js, Express, PostgreSQL (Neon), `pg`, `bcrypt`, `express-session` with `con
    cd bookit
    npm install
    ```
-2. Create a free Postgres database (for example at neon.tech) and run the schema from the section below in its SQL editor.
+2. Create a free Postgres database (for example at neon.tech) and run `schema.sql` in its SQL editor.
 3. Create a `.env` file in the project root (see **Environment variables**).
 4. Load the demo data:
    ```
@@ -83,7 +83,7 @@ Key constraints on `bookings`:
 
 The `EXCLUDE` constraint makes the database itself refuse two overlapping active bookings for the same resource. Cancelled bookings stay in the table as history and do not block the slot. All times are stored in UTC (`timestamptz`) and shown in the user's local time.
 
-The full `CREATE TABLE` statements are in the project setup notes and are applied before running `seed.js`. The `session` table is created automatically by `connect-pg-simple`.
+The full `CREATE TABLE` statements are in `schema.sql`. Run it in your database's SQL editor before `seed.js`. The `session` table is created automatically by `connect-pg-simple`.
 
 ## Design questions
 
@@ -133,7 +133,7 @@ The tests create temporary users and cancel their own bookings afterwards. Runni
 ```
 server.js            app setup, sessions, route mounting
 db.js                PostgreSQL connection pool
-middleware.js        requireLogin and requireAdmin
+auth-middleware.js   requireLogin and requireAdmin
 routes-auth.js       signup, login, logout, current user
 routes-resources.js  list, add, edit, retire resources
 routes-bookings.js   create, list own, cancel bookings
