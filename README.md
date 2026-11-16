@@ -1,4 +1,4 @@
-# BookIt
+<img width="719" height="374" alt="image" src="https://github.com/user-attachments/assets/7e9496eb-21b9-4966-81f8-b149ffb3800b" /># BookIt
 
 A secure booking platform for shared lab equipment. It replaces a WhatsApp group in a university robotics lab, where people double-booked the 3D printer, VR headsets and meeting room. Members book what they need, clashes are impossible, and the lab in-charge can see and manage everything.
 
@@ -60,6 +60,7 @@ Names only. Never commit real values. `.env` is listed in `.gitignore`.
 | `SESSION_SECRET` | Long random text used to sign session cookies        |
 | `NODE_ENV`       | Set to `production` when deployed (enables secure cookies) |
 | `PORT`           | Optional. Defaults to 3000 locally                   |
+| `BASE_URL` | Optional URL of the application used for testing |
 
 ## Database schema
 
